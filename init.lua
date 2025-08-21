@@ -94,7 +94,7 @@ vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = false
 
 -- [[ Setting options ]]
--- See `:help vim.o`
+-- See `:help vim.o`eval "$(oh-my-posh init bash)"
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
@@ -152,7 +152,7 @@ vim.o.splitbelow = true
 --   See `:help lua-options`
 --   and `:help lua-options-guide`
 vim.o.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = '→ ', trail = '·', nbsp = '␣' }
 
 -- Preview substitutions live, as you type!
 vim.o.inccommand = 'split'
@@ -878,12 +878,13 @@ require('lazy').setup({
     },
   },
   {
-    'scottmckendry/cyberdream.nvim',
+    'pineapplegiant/spaceduck',
     lazy = false,
-    config = function()
-      -- vim.opt.background = 'light' -- set this to dark or light
-      vim.cmd.colorscheme 'cyberdream'
-    end,
+    priority = 1000,
+  },
+  {
+    'zootedb0t/citruszest.nvim',
+    lazy = false,
     priority = 1000,
   },
   { -- You can easily change to a different colorscheme.
@@ -1028,6 +1029,6 @@ require('lazy').setup({
     },
   },
 })
-
+vim.cmd 'colorscheme spaceduck'
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
